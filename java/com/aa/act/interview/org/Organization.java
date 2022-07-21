@@ -45,10 +45,6 @@ public abstract class Organization {
 		} else {
 			// Traverse all the direct reporters of the current position
 			for(Position position : root.getDirectReports()) {
-				// Position matches title
-				if(position.getTitle().equals(title)) {
-					return position;
-				} else {
 					// Recurse to find position
 					Position foundPos = findPosition(position, title);
 					// Desired position was not found in subtree
@@ -57,7 +53,6 @@ public abstract class Organization {
 					} else {
 						return foundPos;
 					}
-				}
 			}
 		}
 		// Returns when the desired position was not found in current subtree
