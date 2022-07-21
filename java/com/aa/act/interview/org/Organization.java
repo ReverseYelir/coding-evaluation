@@ -27,6 +27,7 @@ public abstract class Organization {
 		if(position != null) {
 			Optional<Employee> newEmployee = Optional.of(new Employee(this.numEmployees++, person));
 			position.setEmployee(newEmployee);
+			return Optional.of(position);
 		}
 		// Only returns when desired title does not exist in our organization
 		return Optional.empty();
